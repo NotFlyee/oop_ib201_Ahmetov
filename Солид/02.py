@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 @dataclass
 class Order:
@@ -10,7 +10,7 @@ class Customer:
     kind: 'Discount'
 
 
-class Discount:
+class Discount(ABC):
     @abstractmethod
     def get_discount_price(self, order: Order):
         pass
